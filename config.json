@@ -2,5 +2,8 @@
     "token": "SECRET-TOKEN",
     "prefix": "^",
     "owner": "598114684108931072",
-    "tutor_role": 739500218479018066
+    "tutor_role": 833260737769766913,
+    "guild_id": 705786268340191262,
+    "welcome_channel": 795686321883578369,
+    "activity": "Old (better) Top Gear"
 }
