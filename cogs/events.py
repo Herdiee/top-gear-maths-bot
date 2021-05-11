@@ -3,9 +3,11 @@ import discord
 import json
 from discord.ext import commands
 
+
 # Colored Terminal
 import colored
 from colored import stylize
+
 
 # Load the config file
 with open('./config.json', 'r') as configfile:
@@ -31,20 +33,19 @@ class Events(commands.Cog):
     # Event triggered when a member joins
     @commands.Cog.listener()
     async def on_member_join(self, member):
-
-        # Embed Creation
+        # DM Embed Creation
         embed = discord.Embed(
             title="**Welcome Message",
             description="Welcome to Top Gear Maths Shed! We hope you enjoy your stay :D",
             color=0x2ecc71
             )
-        # Set the embed thumbnail to the users avatar
+        # Set the DM embed thumbnail to the users avatar
         embed.set_thumbnail(url = member.avatar_url)
-        # Send the welcome embed
+        # Send the welcome embed to the users DMS
         await member.send(embed=embed)
-
         # Get the welcome channel from the config
         general = self.client.get_channel(config["welcome_channel"])
+        # Send the welcome message 
         await general.send(member.mention + ' has joined the server B)')
 
 
