@@ -3,6 +3,7 @@ import discord
 from discord.ext import commands
 
 
+# Colored Console
 import colored
 from colored import stylize
 
@@ -140,8 +141,7 @@ class Moderation(commands.Cog):
                 # Log to console
                 print(stylize(f"Error when kicking {member}", colored.fg("red")))
                 # Reply with error message
-                await context.send("Something went wrong!")
-                
+                await context.send("Something went wrong!")           
 
 
 def setup(client):

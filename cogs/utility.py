@@ -1,7 +1,15 @@
 # Dependencies
 import discord
 import json
+
+
+# Additional Dependencies
 from discord.ext import commands
+from discord_slash import cog_ext, SlashCommand
+
+
+# Guild ids for slash commands
+guild_ids = [840240462039089182]
 
 
 # Colored Console
@@ -20,17 +28,7 @@ class Utility(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    # Ping Command
-    @commands.command(name='ping',
-                      brief='PONG',
-                      description='Get the latency',
-                      aliases=['pong']
-                     )
-    async def ping(self, ctx):
-        # Simply reply with pong
-        await ctx.send('Pong!')
 
-    
     # Suggest Command
     @commands.command(name='suggest',
                       brief='Make a suggestion',
@@ -69,7 +67,6 @@ class Utility(commands.Cog):
         math_helper = discord.utils.get(context.guild.roles, id=config["tutor_role"])
         # Send the message
         await context.send(f"{math_helper.mention} please help {context.author.mention} with ```{message}```")
-
 
 def setup(client):
     client.add_cog(Utility(client))
