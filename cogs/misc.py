@@ -31,13 +31,15 @@ class Utility(commands.Cog):
 
 
     # Ping slash command
-    @cog_ext.cog_slash(name="ping", guild_ids=guild_ids)
+    @cog_ext.cog_slash(name="ping",
+                       guild_ids=guild_ids)
     async def _ping(self, ctx):
         await ctx.send(f"Pong! ({self.client.latency*1000}ms)")
 
     
     # 8ball slash command
-    @cog_ext.cog_slash(name="8ball", guild_ids=guild_ids)
+    @cog_ext.cog_slash(name="8ball",
+                       guild_ids=guild_ids)
     async def _8ball(self, ctx):
         # Potential Outcomes
         answers = ['It is certain.', 'It is decidedly so.', 'You may rely on it.', 'Without a doubt.',
